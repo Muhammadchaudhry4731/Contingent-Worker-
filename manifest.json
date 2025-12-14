@@ -1,0 +1,10 @@
+
+{
+  "name": "Incident Reporting – Contingent Workers",
+  "short_name": "Incident Reporting",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e31c23",
+  "icons": []
+}
