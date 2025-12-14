@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Incident Reporting – Contingent Workers (US)</title>
+  <link rel="manifest" href="manifest.json"/>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .logo { width:48px; height:48px; border-radius:8px; overflow:hidden; }
+    h1 { color:#e31c23; margin:0; font-size:1.4rem; }
+    .box { border:1px solid #ddd; padding:16px; border-radius:8px; max-width: 900px; }
+    label { font-weight:bold; }
+    select { padding:8px; font-size:16px; width:100%; max-width:560px; }
+    .contact { margin-top:16px; background:#f8f8f8; padding:12px; border-radius:8px; }
+    .note { margin-top:12px; font-size:14px; color:#555; }
+    footer { margin-top:20px; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="logo.png" alt="Honeywell"/>
+    <h1>Incident Reporting – Contingent Workers (US)</h1>
+  </header>
+
+  <div class="box">
+    <p>Select your company to view contact details immediately.</p>
+
+    <label for="company">Company</label><br/>
+    <select id="company" onchange="showContact()">
+      <option value="">-- Select Company --</option>
+    </select>
+
+    <div id="contact" class="contact"></div>
+
+    <div class="note">
+      Report any work-related injury immediately to your supervisor.
+      In cases of difficulty breathing, chest pain, heavy bleeding,
+      loss of consciousness or life-threatning emergencies, call 911.
+    </div>
+  </div>
+
+  <footer>Tip: After the first load with internet, this page is cached and works offline.</footer>
+
+  <script>
+    // Contact list (paste/update from contacts.js content if you prefer a separate file)
+    const CONTACTS = {
+      "Acro": "David McKinney, HR Generalist<br/>E: dmckinney@acrocorp.com<br/>P: (734) 629-5283",
+      "Akkodis": "Akkodis Associate Support: AkkodisAssociateSupport@akkodisgroup.com<br/>1st Escalation: Nilsa.Edwards@akkodisgroup.com<br/>2nd Escalation: Susan.Anderson@akkoidgroup.com<br/>P: 844.875.5746",
+      "Artech Information Systems": "Sunitha Krishnamurthy, Associate Director – ER & Compliance<br/>Office: 973.998.2527<br/>Fax: 973.998.2599<br/>Email: Sunitha.Krishnamurthy@artech.com",
+      "Aversan": "Melissa Fernandez<br/>E: melissa@aversan.com<br/>Office: 416‑201‑0442 ext. 1011<br/>Cell: 647‑456‑1060",
+      "BEPC Inc.": "Nolan Hearn, US Division Account Manager<br/>Mobile: 325‑277‑4014<br/>Office: 325‑944‑0169 ext.106<br/>E: Nolan.Hearn@bepcinc.com",
+      "CCL Contracts Consultancy, Inc.": "Arlene Johnson, HR & Admin Mgr<br/>P: 832‑620‑3452<br/>E: arlene.johnson@cclglobal.com",
+      "Jobs R Us (Cor‑Tech LLC)": "Tempe/Glendale: Genaro Palomino, gpalomino@cor‑tech.net, (510) 921‑0599<br/>Illinois: Tasha Ostrande, tostrander@cor‑tech.net, (608) 931‑5802<br/>El Paso: Cecilia Ortega, cortega@cor‑tech.net, (951) 886‑8118<br/>All other sites: Cammie Williams, jcwilliams@cor‑tech.net, (404) 453‑6837",
+      "Datamatics Global Services Inc": "Beth Smiley, Director of HR (D): 734‑525‑2593<br/>Beth_Smiley@datamaticstech.com; ushr@datamatics.com<br/>MSP_Onboarding@datamaticstech.com<br/>Ashok Kumar P: (734) 407‑1005, Text: (716) 437‑6350<br/>E: ashokkumar.d@datamatics.com",
+      "GDKN": "Sunz Insurance Company<br/>P: 877‑306‑2398",
+      "Idexcel Inc": "Mohammed Khan, Sr. Delivery Manager<br/>Direct: 703‑230‑2640<br/>E: mkhan@idexcel.com<br/>Secondary: Ron Patrick, Office: 972‑241‑6707, Mobile: 972‑839‑4398, E: rpatrick@idexcel.com",
+      "Infotree Service, Inc.": "Carol Kulinski, Benefits/Compliance Manager<br/>E: ckulinski@infotreeglobal.com<br/>P: 734‑927‑3143",
+      "Integrity - EDS": "Shereena Smith, HSE Contact<br/>E: shereena.smith@integrity-eds.com<br/>P: (866) 509‑4377<br/>M: (602) 821‑9077",
+      "Intelliswift": "Amber Howard (Dir. of HR)<br/>E: amber.howard@intelliswift.com, hr@intelliswift.com<br/>P: (510) 695‑2632",
+      "Intertec Engineering, LLC": "Charles Jonkosky, C: 602‑570‑3869, E: Charles.jonkosky@intertecintl.com<br/>Backup: Joshua Hedeby, C: 480‑319‑4930, E: Joshua.Hedeby@intertecintl.com",
+      "Kronos Consulting": "Andrew Gabriel P: 480‑900‑7222 / 602‑677‑1163, E: Andrew.Gabriel@kronosconsulting.net<br/>Marrie De Leon P: 480‑581‑4026, E: Marrie.deleon@Kronosconsulting.net",
+      "Launch Technical Workforce": "Report any work‑related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at 888‑888‑7195 (option 5). E: safety@launchtws.com",
+      "Lancesoft, Inc.": "Veronica Jones<br/>E: Veronica.Jones@lancesoft.com<br/>P: 703‑674‑4543",
+      "Manpower": "Torrance & Phoenix – Jeff Parker, Jeff.parker@manpower.com, 818.235.8899 / 213.519.7692<br/>Redmond – Michael Jin, Michael.jin@manpower.com, 425.531.2794<br/>Lincolnshire – Erran Schmidkonz, Erran.schmidkonz@manpower.com, 847.689.2217<br/>Olathe – Sara Barton, Sara.barton@manpower.com, 913.221.0837<br/>Northford – Theresa Delvecchio, Theresa.delvecchio@manpower.com, 203.859.3597<br/>Ohio – Jennifer Tackett, Jennifer.Tackett@manpower.com, 614.822.9473 / 614.305.1931<br/>El Paso – Jonathan Williams, Jonathan.williams@manpower.com, 915.820.2754 / 915.307.9218",
+      "NESCO Resource": "Paul Chacon<br/>P: 312‑444‑9972<br/>E: pchacon@nescoresource.com",
+      "Pacer Staffing": "ecare@pacerstaffing.com or (215) 966‑8380 / (717)‑385‑6962<br/>Designated Safety Contact: Sargam Dubey, sargam.dubey@pacerstaffing.com, Direct: (215) 966‑8380<br/>Emergency: Moon Rana, Moon.Rana@pacerstaffng.com, Direct: (717)‑385‑6962<br/>Carrier: Service America, Nurse line: (866) 204‑0683",
+      "PDS Tech": "WC Central Team: 1‑833‑470‑6688 or workerscompsupport@adeccogroup.com (8:00 AM–8:00 PM EST M‑F)<br/>After hours: 1‑855‑293‑4222 (Clinical Consultation Nurse Triage)",
+      "Pyramid Consulting, Inc.": "Yensy Parra, P: 214‑715‑5632, E: Yensy.parra@pyramidci.com",
+      "Responsible Staffing (RA Safety Staffing)": "Donald Nixon – 225‑333‑8035, E: donald@rasafetystaffing.com",
+      "Select Source International (SSI)": "Afterhours: 1.866.687.0710<br/>Kekti, E: KektiJ@selectsourceintl.com, P: 612‑474‑9567",
+      "TAD PGS": "Adecco WC Support Team: 1‑833‑470‑6688 (8am–8pm EST)<br/>Clinical Consult: 1‑855‑293‑4222 (after hours)",
+      "Talascend SL LLC": "Kim Stouffer, VP HR, 248‑537‑1288 / Cell 248‑410‑9974, E: kim.stouffer@talascend.com<br/>If emailing, copy Jeannette: jeannette.tousignaut@talascend.com",
+      "Tucson Embedded Systems (TES)": "Nancy Kitts, HR/Tech Recruiter<br/>E: NancyK@TES‑i.com<br/>O: (520) 575‑7283<br/>C: (520) 971‑5593",
+      "US Tech Solutions": "Michelle Vanetti<br/>E: health‑safety@ustechsolutions.com<br/>P: 201.719.9953"
+    };
+
+    function populate(){
+      const sel = document.getElementById('company');
+      Object.keys(CONTACTS).sort().forEach(name => {
+        const opt = document.createElement('option');
+        opt.value = name; opt.textContent = name;
+        sel.appendChild(opt);
+      });
+    }
+
+    function showContact(){
+      const name = document.getElementById('company').value;
+      document.getElementById('contact').innerHTML = CONTACTS[name] || '';
+    }
+
+    // Cache for offline after first load
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(console.error);
+    }
+
+    window.addEventListener('DOMContentLoaded', populate);
+  </script>
+</body>
+</html>
