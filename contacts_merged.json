@@ -1,0 +1,435 @@
+{
+  "message": "Please notify your Honeywell Supervisor about your incident first. Then, select your staffing company to view contact details for reporting.",
+  "honeywell": [
+    {
+      "supplier": "Honeywell Employee – Canada",
+      "contact": "Windley Ely Nurse Triage",
+      "emails": [],
+      "phones": [
+        "(877) 424-5256"
+      ],
+      "notes": "Report any work-related injury immediately to your supervisor. In emergencies, call 911."
+    },
+    {
+      "supplier": "Honeywell Employee – US",
+      "contact": "Care On Site",
+      "emails": [],
+      "phones": [
+        "(844) 501-2273"
+      ],
+      "notes": "Report any work-related injury immediately to your supervisor. In emergencies, call 911."
+    }
+  ],
+  "providers": [
+    {
+      "supplier": "Acro",
+      "contact": "David McKinney, HR Generalist; David McKinney, HR Generalist\nE:",
+      "emails": [
+        "dmckinney@acrocorp.com"
+      ],
+      "phones": [],
+      "notes": "David McKinney, HR Generalist David McKinney, HR Generalist E: | P: (734) 629-5283"
+    },
+    {
+      "supplier": "Akkodis",
+      "contact": "Akkodis Associate Support",
+      "emails": [
+        "AkkodisAssociateSupport@akkodisgroup.com"
+      ],
+      "phones": [],
+      "notes": "Akkodis Associate Support"
+    },
+    {
+      "supplier": "Artech Information Systems",
+      "contact": "Sunitha Krishnamurthy; Sunitha Krishnamurthy\nAssociate Director – ER & Compliance\nOffice:",
+      "emails": [
+        "Sunitha.Krishnamurthy@artech.com"
+      ],
+      "phones": [
+        "973.998.2527",
+        "973.998.2599"
+      ],
+      "notes": "Sunitha Krishnamurthy Sunitha Krishnamurthy Associate Director – ER & Compliance Office: | Fax: Email:"
+    },
+    {
+      "supplier": "Aversan",
+      "contact": "Melissa Fer; Melissa Fernandez",
+      "emails": [],
+      "phones": [],
+      "notes": "Melissa Fer Melissa Fernandez"
+    },
+    {
+      "supplier": "BEPC Inc.",
+      "contact": "Nolan Hearn; Nolan Hearn\nUS Division Account Manager\nMobile:",
+      "emails": [
+        "Nolan.Hearn@bepcinc.com"
+      ],
+      "phones": [
+        "325.277.4014",
+        "325.944.0169"
+      ],
+      "notes": "Nolan Hearn Nolan Hearn US Division Account Manager Mobile: | Office: ext.106"
+    },
+    {
+      "supplier": "CCL Contracts Consultancy, Inc.",
+      "contact": "Arlene Johnson, HR & Admin Mgr,",
+      "emails": [
+        "arlene.johnson@cclglobal.com"
+      ],
+      "phones": [
+        "832-620-3452"
+      ],
+      "notes": "Arlene Johnson, HR & Admin Mgr, ;"
+    },
+    {
+      "supplier": "Datamatics Global Services Inc",
+      "contact": "Beth Smiley; Beth Smiley\nDirector of Human Resources\n(D):",
+      "emails": [
+        "Beth_Smiley@datamaticstech.com",
+        "MSP_Onboarding@datamaticstech.com",
+        "ashokkumar.d@datamatics.com",
+        "ushr@datamatics.com"
+      ],
+      "phones": [
+        "734-525-2593"
+      ],
+      "notes": "Beth Smiley Beth Smiley Director of Human Resources (D): ; Ashok Kumar (P): (734) 407 1005 (Text): (716) 437 6350 Email :"
+    },
+    {
+      "supplier": "GDKN",
+      "contact": "Sunz Insurance Company",
+      "emails": [],
+      "phones": [
+        "877-306-2398"
+      ],
+      "notes": "Sunz Insurance Company"
+    },
+    {
+      "supplier": "Idexcel Inc",
+      "contact": "Primary Contact:; Primary Contact:\nMohammed Khan | Sr. Delivery Manager\nDirect:",
+      "emails": [
+        "mkhan@idexcel.com",
+        "rpatrick@idexcel.com"
+      ],
+      "phones": [
+        "703.230.2640",
+        "972-241-6707",
+        "972-839-4398"
+      ],
+      "notes": "Primary Contact: Primary Contact: Mohammed Khan | Sr. Delivery Manager Direct: Email: Secondary Contact: Ron Patrick Office: | Mobile: Email:"
+    },
+    {
+      "supplier": "Infotree Service, Inc.",
+      "contact": "Carol Kulinski; Carol Kulinski\nBenefits/Compliance Manager",
+      "emails": [
+        "ckulinski@infotreeglobal.com"
+      ],
+      "phones": [
+        "734-927-3143"
+      ],
+      "notes": "Carol Kulinski Carol Kulinski Benefits/Compliance Manager"
+    },
+    {
+      "supplier": "Integrity - EDS",
+      "contact": "Shereena Smith; Shereena Smith\nHSE Contact\nE:",
+      "emails": [
+        "shereena.smith@integrity-eds.com"
+      ],
+      "phones": [],
+      "notes": "Shereena Smith Shereena Smith HSE Contact E: P: (866) 509-4377 M: (602) 821-9077"
+    },
+    {
+      "supplier": "Intelliswift",
+      "contact": "Amber Howard ( Dir. of HR)",
+      "emails": [
+        "amber.howard@intelliswift.com",
+        "hr@intelliswift.com"
+      ],
+      "phones": [],
+      "notes": "Amber Howard ( Dir. of HR) Amber Howard ( Dir. of HR) 12/17/25, 10:24 AM Inbox - Chaudhry, Muhammad Bilal - Outlook https://outlook.office.com/mail/inbox/id/AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0AegKguxiQckC22esbY1fTrwABkatPPwAA?nativeVersion… 1/3 (510) 695-2632"
+    },
+    {
+      "supplier": "Intertec Engineering, LLC",
+      "contact": "Charles Jonkosky; Charles Jonkosky\nC:",
+      "emails": [
+        "Charles.jonkosky@intertecintl.com",
+        "Joshua.Hedeby@intertecintl.com"
+      ],
+      "phones": [
+        "480-319-4930",
+        "602-570-3869"
+      ],
+      "notes": "Charles Jonkosky Charles Jonkosky C: Email: Backup: Joshua Hedeby C: Email:"
+    },
+    {
+      "supplier": "Jobs R Us (Cor‑Tech LLC)",
+      "contact": "Tempe/Glendale, Genaro Palomino,",
+      "emails": [
+        "cortega@cor-tech.net",
+        "gpalomino@cor-tech.net",
+        "jcwilliams@cor-tech.net",
+        "tostrander@cor-tech.net"
+      ],
+      "phones": [
+        "931 - 5802"
+      ],
+      "notes": "Tempe/Glendale, Genaro Palomino, , (510) 921-0599 Tempe/Glendale, Genaro Palomino, , (510) 921-0599 Illinois, Tasha Ostrande, , (608) El Paso, Cecilia Ortega, , (951) 886-8118 All other sites, Cammie Williams, , (404) 453-6837"
+    },
+    {
+      "supplier": "Kronos Consulting",
+      "contact": "Andrew Gabriel",
+      "emails": [
+        "Andrew.Gabriel@kronosconsulting.net",
+        "Marrie.deleon@Kronosconsulting.net"
+      ],
+      "phones": [
+        "480-581-4026",
+        "480-900-7222\n602-677-1163"
+      ],
+      "notes": "Andrew Gabriel Andrew Gabriel Marrie De Leon"
+    },
+    {
+      "supplier": "Lancesoft, Inc.",
+      "contact": "Email:; Email: V e r o n i c a . J o n e s @ l a n c e s o ft . c o m\nPhone:",
+      "emails": [
+        "Veronica.Jones@lancesoft.com"
+      ],
+      "phones": [
+        "703-674-4543"
+      ],
+      "notes": "Email: Email: V e r o n i c a . J o n e s @ l a n c e s o ft . c o m Phone: \""
+    },
+    {
+      "supplier": "Launch Technical Workforce",
+      "contact": "Report any work-related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at",
+      "emails": [
+        "safety@launchtws.com"
+      ],
+      "phones": [
+        "888-888-7195"
+      ],
+      "notes": "Report any work-related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at , option 5. For email you Report any work-related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at , option 5. For email you can use"
+    },
+    {
+      "supplier": "Manpower",
+      "contact": "Torrance and Phoenix – Jeff Parker",
+      "emails": [
+        "Erran.schmidkonz@manpower.com",
+        "Jeff.parker@manpower.com",
+        "Jennifer.Tackett@manpower.com",
+        "Jonathan.williams@manpower.com",
+        "Michael.jin@manpower.com",
+        "Sara.barton@manpower.com",
+        "Theresa.delvecchio@manpower.com"
+      ],
+      "phones": [
+        "203.859.3597",
+        "425.531.2794",
+        "614.822.9473\n614.305.1931",
+        "818.235.8899\n213.519.7692",
+        "847.689.2217",
+        "913.221.0837",
+        "915.820.2754\n915.307.9218"
+      ],
+      "notes": "Torrance and Phoenix – Jeff Parker Torrance and Phoenix – Jeff Parker Redmond – Michael Jin Lincolnshire – Erran Schmidkonz Olathe – Sara Barton Northford – Theresa Delvecchio Ohio – Jennifer Tackett El Paso – Jonathan Williams"
+    },
+    {
+      "supplier": "NESCO Resource",
+      "contact": "Paul Chacon-",
+      "emails": [
+        "pchacon@nescoresource.com"
+      ],
+      "phones": [
+        "312-444-9972"
+      ],
+      "notes": "Paul Chacon- Paul Chacon- p c h a c o n @ n e s c o r e s o u r c e . c o m"
+    },
+    {
+      "supplier": "PDS Tech",
+      "contact": "If a PDS employee is injured, please notify our WC Central Team at",
+      "emails": [
+        "workerscompsupport@adeccogroup.com"
+      ],
+      "phones": [
+        "1-833-470-6688",
+        "1-855-293-4222"
+      ],
+      "notes": "If a PDS employee is injured, please notify our WC Central Team at or , 8:00 AM – 8 to a nurse about their injury, medical assessment and care recommendations. In cases of difficulty breathing, chest pain, heavy bleeding, loss If a PDS employee is injured, please notify our WC Central Team at or , 8:00 AM – 8:00 PM EST M-F. After hours, call . This is our Clinical Consultation Nurse Triage dedicated phone line. When calling clinical consult, the employee will speak to a nurse about their injury, medical assessment and care recommendations. In cases of difficulty breathing, chest pain, heavy bleeding, loss of consciousness or life-threatening emergencies, call 911."
+    },
+    {
+      "supplier": "Pacer Staffing",
+      "contact": "e c a r e @ p a c e r s t a ﬃ n g . c o m or (215) 966-8380 / (717)-385-6962\nDesignated Safety Contact:\nSargam Dubey\ns a r g a m . d u b e y @ p a c e r s t a ﬃ n g . c o m\nDirect: (215) 966-8380\n            \n             Emergency Contact:\n             Moon Rana\n             M o o n . R a n a @ p a c e r s t a ﬀ n g . c o m\n             Direct: (717)-385-6962\nCARRIER: Service America\nNurse line: (866) 204-0683 Clinical Consultation is a 24/7 nurse triage line, staﬀed by medical professionals – Employees can speak with a Reg",
+      "emails": [
+        "ecare@pacerstaffing.com"
+      ],
+      "phones": [],
+      "notes": "e c a r e @ p a c e r s t a ﬃ n g . c o m or (215) 966-8380 / (717)-385-6962 Designated Safety Contact: Sargam Dubey s a r g a m . d u b e y @ p a c e r s t a ﬃ n g . c o m Direct: (215) 966-8380 Emergency Contact: Moon Rana M o o n . R a n a @ p a c e r s t a ﬀ n g . c o m Direct: (717)-385-6962 CARRIER: Service America Nurse line: (866) 204-0683 Clinical Consultation is a 24/7 nurse triage line, staﬀed by medical professionals – Employees can speak with a Reg or (215) 966-8380 / (717)-385-6962"
+    },
+    {
+      "supplier": "Pyramid Consulting, Inc.",
+      "contact": "Yensy Parra",
+      "emails": [
+        "Yensy.parra@pyramidci.com",
+        "donald@rasafetystaffing.com"
+      ],
+      "phones": [
+        "214-715-5632",
+        "225-333-8035"
+      ],
+      "notes": "Yensy Parra Yensy Parra Responsible Staffing (RA Safety Staffing)Donald Nixon – Email –"
+    },
+    {
+      "supplier": "Responsible Staffing (RA Safety Staffing)",
+      "contact": "Donald Nixon –",
+      "emails": [],
+      "phones": [
+        "225-333-8035"
+      ],
+      "notes": "Donald Nixon –"
+    },
+    {
+      "supplier": "Select Source International (SSI)",
+      "contact": "Afterhours:",
+      "emails": [
+        "KektiJ@selectsourceintl.com"
+      ],
+      "phones": [
+        "1.866.687.0710",
+        "612-474-9567"
+      ],
+      "notes": "Afterhours: Afterhours: Kekti or phone number"
+    },
+    {
+      "supplier": "TAD PGS",
+      "contact": "Adecco WC Support Team:",
+      "emails": [],
+      "phones": [
+        "1-833-470-6688",
+        "1-855-293-4222"
+      ],
+      "notes": "Adecco WC Support Team: (hours of 8am – 8pm EST) Adecco WC Support Team: (hours of 8am – 8pm EST) Clinical Consult: (after hours)"
+    },
+    {
+      "supplier": "Talascend SL LLC",
+      "contact": "Kim Stouffer, VP of Human Resources,",
+      "emails": [
+        "jeannette.tousignaut@talascend.com",
+        "kim.stouffer@talascend.com"
+      ],
+      "phones": [
+        "248-410-9974",
+        "248-537-1288"
+      ],
+      "notes": "Kim Stouffer, VP of Human Resources, or cell @ , . Kim Stouffer, VP of Human Resources, or cell @ , . If contact is sent via email, please copy Jeannette 12/17/25, 10:24 AM Inbox - Chaudhry, Muhammad Bilal - Outlook https://outlook.office.com/mail/inbox/id/AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0AegKguxiQckC22esbY1fTrwABkatPPwAA?nativeVersion… 2/3"
+    },
+    {
+      "supplier": "Tucson Embedded Systems (TES)",
+      "contact": "Nancy Kitts; Nancy Kitts\nHR/Tech. Recruiter",
+      "emails": [
+        "NancyK@TES-i.com"
+      ],
+      "phones": [],
+      "notes": "Nancy Kitts Nancy Kitts HR/Tech. Recruiter O: (520) 575-7283 C: (520) 971-5593"
+    },
+    {
+      "supplier": "US Tech Solutions",
+      "contact": "Contact:               Michelle Vanetti\nEmail Id:; Contact:               Michelle Vanetti",
+      "emails": [
+        "2@honeywell.com",
+        "Jonathan.Walker@Honeywell.com",
+        "Kelly.Fluke@TAPFIN.com",
+        "Mark.Williams@Honeywell.com",
+        "MuhammadBilal.Chaudhry@Honeywell.com",
+        "Nathan.Jones2@Honeywell.com",
+        "health-safety@ustechsolutions.com"
+      ],
+      "phones": [
+        "+1 623 261 8238",
+        "201.719.9953",
+        "502-974-0422"
+      ],
+      "notes": "Contact: Michelle Vanetti Contact: Michelle Vanetti Email Id: Number: Kelly Fluke Program Manager, NA Operations TAPFIN T: www.talentsolutions.manpowergroup.com From: Jones, Nathan <> Sent: Wednesday, December 17, 2025 9:11 AM To: Kelly Fluke <kelly.ﬂuke@tapﬁn.com>; Aileen Macke <Aileen.Macke@tapﬁn.com> Cc: Chaudhry, Muhammad Bilal <>; Williams, Mark <>; Walker, Jonathan <> Subject: Updated Incident Reporting Contacts for Labor Providers Importance: High ⚠ Caution: The sender is from outside of our organization. Do not click on any links or open attachments unless you are expecting links/attachments from this sender. If not, please report by clicking the “Report Phishing” or “Report Spam” button above. Kelly and Aileen, Can you please provide a copy of the most updated incident reporting numbers for all contingent labor providers please? We are working on a system to help communicate who to call since we are unable to require one consistent telephonic health provider. Thanks, Nate Nate Jones Sr. Projects HSE Engineer Honeywell | Smart Energy Mobile: N a t h a n . J o n e s Honeywell Utility Services This email and any files transmitted with it are confidential and or privileged information internal to our organization and intended solely for the use of the individual(s) or entity or entities to whom they are addressed. This message contains confidential information and is intended only for the recipients. If you have received this email in error please notify the sender by replying to this email and then delete this message and any attachments. If you are not the named addressee you may not disseminate, distribute or copy this e-mail. If you are the intended recipient you are notified that unauthorized disclosure, copy, storage, or distribution of this information is strictly prohibited.12/17/25, 10:24 AM Inbox - Chaudhry, Muhammad Bilal - Outlook https://outlook.office.com/mail/inbox/id/AAkALgAAAAAAHYQDEapmEc2byACqAC%2FEWg0AegKguxiQckC22esbY1fTrwABkatPPwAA?nativeVersion… 3/3"
+    },
+    {
+      "supplier": "nan",
+      "contact": "(510) 695-2632; (D):; (P): (734) 407 1005 (Text): (716) 437 6350; 1st POC Escalation; 2nd POC Escalation; All other sites, Cammie Williams,; Ashok Kumar; Associate Director – ER & Compliance; Backup:; Benefits/Compliance Manager; C:; C: (520) 971-5593; CARRIER: Service America; Cell:; Clinical Consult:; Designated Safety Contact:; Direct:; Direct: (215) 966-8380; Direct: (717)-385-6962; Director of Human Resources; E:; El Paso – Jonathan Williams; El Paso, Cecilia Ortega,; Email :; Email Id:; Email –; Email:; Emergency Contact:; HR/Tech. Recruiter; HSE Contact; If contact is sent via email, please copy Jeannette; Illinois, Tasha Ostrande,; Joshua Hedeby; Kekti; Lincolnshire – Erran Schmidkonz; M: (602) 821-9077; Marrie De Leon; Mobile:; Mohammed Khan | Sr. Delivery Manager; Moon Rana; Northford – Theresa Delvecchio; Number:; Nurse line: (866) 204-0683 Clinical Consultation is a 24/7 nurse triage line, staffed by medical professionals – Employees can speak with a Registered Nurse and receive advice, assessment, and care recommendations.; O: (520) 575-7283; Office:; Ohio – Jennifer Tackett; Olathe – Sara Barton; P: (866) 509-4377; Phone:; Redmond – Michael Jin; Ron Patrick; Sargam Dubey; Secondary Contact:; US Division Account Manager; dez",
+      "emails": [
+        "Andrew.Gabriel@kronosconsulting.net",
+        "Beth_Smiley@datamaticstech.com",
+        "Charles.jonkosky@intertecintl.com",
+        "Erran.schmidkonz@manpower.com",
+        "Jeff.parker@manpower.com",
+        "Jennifer.Tackett@manpower.com",
+        "Jonathan.williams@manpower.com",
+        "Joshua.Hedeby@intertecintl.com",
+        "KektiJ@selectsourceintl.com",
+        "MSP_Onboarding@datamaticstech.com",
+        "Marrie.deleon@Kronosconsulting.net",
+        "Michael.jin@manpower.com",
+        "Moon.Rana@pacerstaffng.com",
+        "NancyK@TES-i.com",
+        "Nilsa.Edwards@akkodisgroup.com",
+        "Nolan.Hearn@bepcinc.com",
+        "Sara.barton@manpower.com",
+        "Sunitha.Krishnamurthy@artech.com",
+        "Susan.Anderson@akkoidgroup.com",
+        "Theresa.delvecchio@manpower.com",
+        "Yensy.parra@pyramidci.com",
+        "amber.howard@intelliswift.com",
+        "ashokkumar.d@datamatics.com",
+        "ckulinski@infotreeglobal.com",
+        "cortega@cor-tech.net",
+        "dmckinney@acrocorp.com",
+        "donald@rasafetystaffing.com",
+        "health-safety@ustechsolutions.com",
+        "hr@intelliswift.com",
+        "jcwilliams@cor-tech.net",
+        "jeannette.tousignaut@talascend.com",
+        "melissa@aversan.com",
+        "mkhan@idexcel.com",
+        "rpatrick@idexcel.com",
+        "sargam.dubey@pacerstaffing.com",
+        "shereena.smith@integrity-eds.com",
+        "tostrander@cor-tech.net",
+        "ushr@datamatics.com"
+      ],
+      "phones": [
+        "1-855-293-4222",
+        "201.719.9953",
+        "203.859.3597",
+        "213.519.7692",
+        "214-715-5632",
+        "325.277.4014",
+        "325.944.0169",
+        "416 201 0442",
+        "425.531.2794",
+        "480-319-4930",
+        "480-581-4026",
+        "480-900-7222",
+        "602-570-3869",
+        "602-677-1163",
+        "612-474-9567",
+        "614.305.1931",
+        "614.822.9473",
+        "647 456 1060",
+        "703-674-4543",
+        "703.230.2640",
+        "734-525-2593",
+        "734-927-3143",
+        "818.235.8899",
+        "844.875.5746",
+        "847.689.2217",
+        "877-306-2398",
+        "913.221.0837",
+        "915.307.9218",
+        "915.820.2754",
+        "931 - 5802",
+        "972-241-6707",
+        "972-839-4398",
+        "973.998.2527",
+        "973.998.2599"
+      ],
+      "notes": "(510) 695-2632 (D): (P): (734) 407 1005 (Text): (716) 437 6350 1st POC Escalation 2nd POC Escalation ; All other sites, Cammie Williams, , (404) 453-6837 Ashok Kumar Associate Director – ER & Compliance Backup: Benefits/Compliance Manager C: C: (520) 971-5593 CARRIER: Service America Cell: Clinical Consult: (after hours) Designated Safety Contact: Direct: Direct: (215) 966-8380 Direct: (717)-385-6962 Director of Human Resources E: E: | P: (734) 629-5283 El Paso – Jonathan Williams El Paso, Cecilia Ortega, , (951) 886-8118 Email : Email Id: Email – Email: Emergency Contact: HR/Tech. Recruiter HSE Contact If contact is sent via email, please copy Jeannette Illinois, Tasha Ostrande, , (608) Joshua Hedeby Kekti Lincolnshire – Erran Schmidkonz M: (602) 821-9077 Marrie De Leon Mobile: | Office: ext.106 Mohammed Khan | Sr. Delivery Manager Moon Rana Northford – Theresa Delvecchio Number: Nurse line: (866) 204-0683 Clinical Consultation is a 24/7 nurse triage line, staffed by medical professionals – Employees can speak with a Registered Nurse and receive advice, assessment, and care recommendations. O: (520) 575-7283 Office: ext. 1011 Office: | Fax: Office: | Mobile: Ohio – Jennifer Tackett Olathe – Sara Barton P: (866) 509-4377 Phone: \" Redmond – Michael Jin Ron Patrick Sargam Dubey Secondary Contact: US Division Account Manager dez Office: ext. 1011 Cell: or phone number"
+    }
+  ]
+}
