@@ -33,9 +33,7 @@
       padding: 16px; margin-bottom: 16px;
     }
     .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 720px) {
-      .row { grid-template-columns: 1fr 1fr; }
-    }
+    @media (min-width: 720px) { .row { grid-template-columns: 1fr 1fr; } }
     label { font-size: 14px; color: #333; }
     select, input[type="text"] {
       width: 100%; padding: 10px; font-size: 16px;
@@ -54,12 +52,13 @@
     }
     .hint { font-size: 13px; color: var(--muted); margin-top: 8px; }
     footer { margin-top: 24px; font-size: 12px; color: var(--muted); }
+    .sr-only { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .error { color: #b00020; font-weight: 600; }
   </style>
 </head>
 <body>
   <header>
-    <!-- Optional logo: ensure honeywelllogo.png is in repo root -->
-    <img src="./honeywelllogo.png" alt="Honeywell logo" onerror="this.style.display='none'">
+    <img src="honeywelllogo.png" alt="Honeywell" />
     <div>
       <h1>Incident Reporting</h1>
       <p class="lead">
@@ -69,52 +68,18 @@
     </div>
   </header>
 
-  <div class="panel">
+  <div class="panel" id="app">
     <div class="row" role="group" aria-label="Selection controls">
       <div>
         <label for="company">Select Honeywell or your provider:</label>
-        <select id="company" aria-label="Select your company or provider">
-          <option value="">— Select —</option>
-          <optgroup label="Honeywell">
-            <option value="honeywell-us">Honeywell Employee – US</option>
-            <option value="honeywell-canada">Honeywell Employee – Canada</option>
-          </optgroup>
-          <optgroup label="Contingent Labor Providers (US)">
-            <option value="acro">Acro</option>
-            <option value="akkodis">Akkodis</option>
-            <option value="artech">Artech Information Systems</option>
-            <option value="aversan">Aversan</option>
-            <option value="bepc">BEPC Inc.</option>
-            <option value="ccl">CCL Contracts Consultancy, Inc.</option>
-            <option value="jobsrus">Jobs R Us (Cor‑Tech LLC)</option>
-            <option value="datamatics">Datamatics Global Services Inc</option>
-            <option value="gdkn">GDKN</option>
-            <option value="idexcel">Idexcel Inc</option>
-            <option value="infotree">Infotree Service, Inc.</option>
-            <option value="integrityeds">Integrity ‑ EDS</option>
-            <option value="intelliswift">Intelliswift</option>
-            <option value="intertec">Intertec Engineering, LLC</option>
-            <option value="kronos">Kronos Consulting</option>
-            <option value="launch">Launch Technical Workforce</option>
-            <option value="lancesoft">Lancesoft, Inc.</option>
-            <option value="manpower">Manpower</option>
-            <option value="nesco">NESCO Resource</option>
-            <option value="pacer">Pacer Staffing</option>
-            <option value="pdstech">PDS Tech</option>
-            <option value="pyramid">Pyramid Consulting, Inc.</option>
-            <option value="rasafety">Responsible Staffing (RA Safety Staffing)</option>
-            <option value="ssi">Select Source International (SSI)</option>
-            <option value="tadpgs">TAD PGS</option>
-            <option value="talascend">Talascend SL LLC</option>
-            <option value="tes">Tucson Embedded Systems (TES)</option>
-            <option value="ustech">US Tech Solutions</option>
-          </optgroup>
+        <select id="company" aria-label="Select your company or provider" disabled>
+          <option value="">Loading…</option>
         </select>
       </div>
 
       <div>
         <label for="search">Search provider (type to filter):</label>
-        <input id="search" type="text" placeholder="Start typing e.g., Manpower, BEPC…" aria-label="Search providers" />
+        <input id="search" type="text" placeholder="Start typing e.g., Manpower, BEPC…" aria-label="Search providers" disabled />
       </div>
     </div>
 
@@ -132,97 +97,49 @@
   </footer>
 
   <script>
-    // === Contacts master data ===
-    const contacts = {
-      "honeywell-us":
-        "Honeywell Employee – US\nCare On Site: (844) 501‑2273\nReport any work‑related injury immediately to your supervisor.",
-      "honeywell-canada":
-        "Honeywell Employee – Canada\nWindley Ely Nurse Triage: (877) 424‑5256\nReport any work‑related injury immediately to your supervisor.",
-      "acro":
-        "Acro\nDavid McKinney, HR Generalist\nEmail: dmckinney@acrocorp.com\nPhone: (734) 629‑5283",
-      "akkodis":
-        "Akkodis\nAssociate Support: AkkodisAssociateSupport@akkodisgroup.com\n1st Escalation: Nilsa.Edwards@akkodisgroup.com\n2nd Escalation: Susan.Anderson@akkoidgroup.com\nPhone: 844.875.5746",
-      "artech":
-        "Artech Information Systems\nSunitha Krishnamurthy, Associate Director – ER & Compliance\nOffice: 973.998.2527\nEmail: Sunitha.Krishnamurthy@artech.com",
-      "aversan":
-        "Aversan\nMelissa Fernandez\nEmail: melissa@aversan.com\nOffice: 416‑201‑0442 ext. 1011\nCell: 647‑456‑1060",
-      "bepc":
-        "BEPC Inc.\nNolan Hearn, US Division Account Manager\nMobile: 325‑277‑4014\nOffice: 325‑944‑0169 ext.106\nEmail: Nolan.Hearn@bepcinc.com",
-      "ccl":
-        "CCL Contracts Consultancy, Inc.\nArlene Johnson, HR & Admin Mgr\nPhone: 832‑620‑3452\nEmail: arlene.johnson@cclglobal.com",
-      "jobsrus":
-        "Jobs R Us (Cor‑Tech LLC)\nTempe/Glendale: Genaro Palomino, gpalomino@cor‑tech.net, (510) 921‑0599\nIllinois: Tasha Ostrande, tostrander@cor‑tech.net, (608) 931‑5802\nEl Paso: Cecilia Ortega, cortega@cor‑tech.net, (951) 886‑8118\nAll other sites: Cammie Williams, jcwilliams@cor‑tech.net, (404) 453‑6837",
-      "datamatics":
-        "Datamatics Global Services Inc\nBeth Smiley, Director of HR (D): 734‑525‑2593\nEmails: Beth_Smiley@datamaticstech.com; ushr@datamatics.com; MSP_Onboarding@datamaticstech.com\nAshok Kumar (P): (734) 407‑1005 | Text: (716) 437‑6350 | Email: ashokkumar.d@datamatics.com",
-      "gdkn":
-        "GDKN\nSunz Insurance Company\nPhone: 877‑306‑2398",
-      "idexcel":
-        "Idexcel Inc\nPrimary: Mohammed Khan, Sr. Delivery Manager\nDirect: 703‑230‑2640 | Email: mkhan@idexcel.com\nSecondary: Ron Patrick | Office: 972‑241‑6707 | Mobile: 972‑839‑4398 | Email: rpatrick@idexcel.com",
-      "infotree":
-        "Infotree Service, Inc.\nCarol Kulinski, Benefits/Compliance Manager\nEmail: ckulinski@infotreeglobal.com\nPhone: 734‑927‑3143",
-      "integrityeds":
-        "Integrity ‑ EDS\nShereena Smith, HSE Contact\nEmail: shereena.smith@integrity‑eds.com\nPhone: (866) 509‑4377 | Mobile: (602) 821‑9077",
-      "intelliswift":
-        "Intelliswift\nAmber Howard, Dir. of HR\nEmails: amber.howard@intelliswift.com; hr@intelliswift.com\nPhone: (510) 695‑2632",
-      "intertec":
-        "Intertec Engineering, LLC\nCharles Jonkosky | C: 602‑570‑3869 | Email: Charles.jonkosky@intertecintl.com\nBackup: Joshua Hedeby | C: 480‑319‑4930 | Email: Joshua.Hedeby@intertecintl.com",
-      "kronos":
-        "Kronos Consulting\nAndrew Gabriel: 480‑900‑7222, 602‑677‑1163 | Email: Andrew.Gabriel@kronosconsulting.net\nMarrie De Leon: 480‑581‑4026 | Email: Marrie.deleon@Kronosconsulting.net",
-      "launch":
-        "Launch Technical Workforce\nReport any work‑related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at 888‑888‑7195 (option 5).",
-      "lancesoft":
-        "Lancesoft, Inc.\nVeronica Jones\nEmail: Veronica.Jones@lancesoft.com\nPhone: 703‑674‑4543",
-      "manpower":
-        "Manpower\nTorrance/Phoenix: Jeff Parker, Jeff.parker@manpower.com, 818.235.8899 / 213.519.7692\nRedmond: Michael Jin, Michael.jin@manpower.com, 425.531.2794\nLincolnshire: Erran Schmidkonz, Erran.schmidkonz@manpower.com, 847.689.2217\nOlathe: Sara Barton, Sara.barton@manpower.com, 913.221.0837\nNorthford: Theresa Delvecchio, Theresa.Delvecchio@manpower.com, 203.859.3597\nOhio: Jennifer Tackett, Jennifer.Tackett@manpower.com, 614.822.9473 / 614.305.1931\nEl Paso: Jonathan Williams, Jonathan.williams@manpower.com, 915.820.2754 / 915.307.9218",
-      "nesco":
-        "NESCO Resource\nPaul Chacon\nPhone: 312‑444‑9972\nEmail: pchacon@nescoresource.com",
-      "pacer":
-        "Pacer Staffing\nEmail: ecare@pacerstaffing.com | Phone: (215) 966‑8380 / (717)‑385‑6962\nDesignated Safety: Sargam Dubey, sargam.dubey@pacerstaffing.com, (215) 966‑8380\nEmergency: Moon Rana, Moon.Rana@pacerstaffng.com, (717)‑385‑6962\nCarrier: Service America Nurse line: (866) 204‑0683",
-      "pdstech":
-        "PDS Tech\nNotify WC Central Team at 1‑833‑470‑6688 or workerscompsupport@adeccogroup.com (8:00 AM – 8:00 PM).",
-      "pyramid":
-        "Pyramid Consulting, Inc.\nYensy Parra\nPhone: 214‑715‑5632\nEmail: Yensy.parra@pyramidci.com",
-      "rasafety":
-        "Responsible Staffing (RA Safety Staffing)\nDonald Nixon\nPhone: 225‑333‑8035\nEmail: donald@rasafetystaffing.com",
-      "ssi":
-        "Select Source International (SSI)\nAfterhours: 1.866.687.0710\nKekti: KektiJ@selectsourceintl.com | Phone: 612‑474‑9567",
-      "tadpgs":
-        "TAD PGS\nAdecco WC Support Team: 1‑833‑470‑6688 (8am–8pm EST)\nClinical Consult: 1‑855‑293‑4222 (after hours)",
-      "talascend":
-        "Talascend SL LLC\nKim Stouffer, VP of HR, 248‑537‑1288 or 248‑410‑9974, kim.stouffer@talascend.com\nCC: Jeannette Tousignaut, jeannette.tousignaut@talascend.com",
-      "tes":
-        "Tucson Embedded Systems (TES)\nNancy Kitts, HR/Tech. Recruiter\nEmail: NancyK@TES‑i.com\nOffice: (520) 575‑7283 | Cell: (520) 971‑5593",
-      "ustech":
-        "US Tech Solutions\nContact: Michelle Vanetti\nEmail: health‑safety@ustechsolutions.com\nNumber: 201.719.9953"
-    };
-
-    // === UI logic ===
-    const selectEl = document.getElementById("company");
+    // --- Helpers ---
+    const companyEl = document.getElementById("company");
     const detailsEl = document.getElementById("details");
     const searchEl = document.getElementById("search");
 
-    function renderDetails(key) {
-      detailsEl.textContent = "";
-      if (key && contacts[key]) detailsEl.textContent = contacts[key];
+    function formatDetails(rec) {
+      if (!rec) return "";
+      const lines = [];
+      // Title
+      lines.push(rec.supplier);
+      // Role / contact name
+      if (rec.contact) lines.push(rec.contact);
+      // Phones
+      if (rec.phones && rec.phones.length) lines.push("Phone(s): " + rec.phones.join(", "));
+      // Emails
+      if (rec.emails && rec.emails.length) lines.push("Email(s): " + rec.emails.join(", "));
+      // Notes
+      if (rec.notes) lines.push(rec.notes);
+      return lines.join("\\n");
     }
 
-    function onSelect() {
-      renderDetails(selectEl.value);
+    function renderDetailsByKey(key, data) {
+      const index = data.indexMap[key];
+      if (index === undefined) { detailsEl.textContent = ""; return; }
+      detailsEl.textContent = formatDetails(data.all[index]);
     }
 
-    function onSearch(e) {
-      const q = e.target.value.trim().toLowerCase();
-      if (!q) return;
-      const options = [...selectEl.querySelectorAll("option")];
-      const matches = options.filter(o => o.value && o.textContent.toLowerCase().includes(q));
-      if (matches.length) {
-        selectEl.value = matches[0].value;
-        renderDetails(matches[0].value);
-      }
+    function buildIndex(json) {
+      const all = [];
+      const indexMap = {};
+      // Honeywell first (kept as separate entries)
+      json.honeywell.forEach((rec, i) => { indexMap[rec.supplier] = all.length; all.push(rec); });
+      // Providers next
+      json.providers.forEach((rec, i) => {
+        // Avoid duplicates by supplier name (JSON is already deduped, this is defensive)
+        if (indexMap[rec.supplier] === undefined) {
+          indexMap[rec.supplier] = all.length; all.push(rec);
+        }
+      });
+      return { all, indexMap };
     }
 
-    selectEl.addEventListener("change", onSelect);
-    searchEl.addEventListener("input", onSearch);
-  </script>
-</body>
-</
+    function populateDropdown(data) {
+      companyEl.innerHTML = "";
+      const optDefault = document.createElement("option");
+      optDefault.value = ""; optDefault.textContent = "— Select —";
