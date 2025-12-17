@@ -2,101 +2,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Incident Reporting – Contingent Workers (US)</title>
-  <link rel="manifest" href="manifest.json"/>
+  <meta charset="UTF-8" />
+  <title>Incident Reporting – Single QR for Everyone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Unified incident reporting contacts for Honeywell employees and contingent labor providers." />
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-    .logo { width:48px; height:48px; border-radius:8px; overflow:hidden; }
-    h1 { color:#e31c23; margin:0; font-size:1.4rem; }
-    .box { border:1px solid #ddd; padding:16px; border-radius:8px; max-width: 900px; }
-    label { font-weight:bold; }
-    select { padding:8px; font-size:16px; width:100%; max-width:560px; }
-    .contact { margin-top:16px; background:#f8f8f8; padding:12px; border-radius:8px; }
-    .note { margin-top:12px; font-size:14px; color:#555; }
-    footer { margin-top:20px; font-weight:bold; }
+    :root {
+      --brand: #e31c23; /* Honeywell red accent */
+      --bg: #ffffff;
+      --panel: #f7f7f7;
+      --border: #dddddd;
+      --text: #222222;
+      --muted: #666666;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text); background: var(--bg);
+      line-height: 1.45;
+    }
+    header { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    header img { height: 42px; }
+    h1 { font-size: 22px; margin: 0 0 8px; color: var(--brand); }
+    p.lead { margin: 0 0 12px; font-weight: 600; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px; margin-bottom: 16px;
+    }
+    .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 720px) {
+      .row { grid-template-columns: 1fr 1fr; }
+    }
+    label { font-size: 14px; color: #333; }
+    select, input[type="text"] {
+      width: 100%; padding: 10px; font-size: 16px;
+      border-radius: 6px; border: 1px solid var(--border);
+      background: #fff;
+    }
+    .details {
+      margin-top: 12px; white-space: pre-line;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px;
+    }
+    .emergency {
+      margin-top: 8px; padding: 10px;
+      border-left: 4px solid var(--brand);
+      background: #fff5f5; border: 1px solid #f2c7c9;
+    }
+    .hint { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    footer { margin-top: 24px; font-size: 12px; color: var(--muted); }
   </style>
 </head>
 <body>
   <header>
-    <img class="logo" src="logo.png" alt="Honeywell"/>
-    <h1>Incident Reporting – Contingent Workers (US)</h1>
+    <!-- Optional logo: ensure honeywelllogo.png is in repo root -->
+    <img src="./honeywelllogo.png" alt="Honeywell logo" onerror="this.style.display='none'">
+    <div>
+      <h1>Incident Reporting</h1>
+      <p class="lead">
+        <strong>Please notify your Honeywell Supervisor about your incident first.
+        Then, select your staffing company to view contact details for reporting.</strong>
+      </p>
+    </div>
   </header>
 
-  <div class="box">
-    <p>Select your company to view contact details immediately.</p>
+  <div class="panel">
+    <div class="row" role="group" aria-label="Selection controls">
+      <div>
+        <label for="company">Select Honeywell or your provider:</label>
+        <select id="company" aria-label="Select your company or provider">
+          <option value="">— Select —</option>
+          <optgroup label="Honeywell">
+            <option value="honeywell-us">Honeywell Employee – US</option>
+            <option value="honeywell-canada">Honeywell Employee – Canada</option>
+          </optgroup>
+          <optgroup label="Contingent Labor Providers (US)">
+            <option value="acro">Acro</option>
+            <option value="akkodis">Akkodis</option>
+            <option value="artech">Artech Information Systems</option>
+            <option value="aversan">Aversan</option>
+            <option value="bepc">BEPC Inc.</option>
+            <option value="ccl">CCL Contracts Consultancy, Inc.</option>
+            <option value="jobsrus">Jobs R Us (Cor‑Tech LLC)</option>
+            <option value="datamatics">Datamatics Global Services Inc</option>
+            <option value="gdkn">GDKN</option>
+            <option value="idexcel">Idexcel Inc</option>
+            <option value="infotree">Infotree Service, Inc.</option>
+            <option value="integrityeds">Integrity ‑ EDS</option>
+            <option value="intelliswift">Intelliswift</option>
+            <option value="intertec">Intertec Engineering, LLC</option>
+            <option value="kronos">Kronos Consulting</option>
+            <option value="launch">Launch Technical Workforce</option>
+            <option value="lancesoft">Lancesoft, Inc.</option>
+            <option value="manpower">Manpower</option>
+            <option value="nesco">NESCO Resource</option>
+            <option value="pacer">Pacer Staffing</option>
+            <option value="pdstech">PDS Tech</option>
+            <option value="pyramid">Pyramid Consulting, Inc.</option>
+            <option value="rasafety">Responsible Staffing (RA Safety Staffing)</option>
+            <option value="ssi">Select Source International (SSI)</option>
+            <option value="tadpgs">TAD PGS</option>
+            <option value="talascend">Talascend SL LLC</option>
+            <option value="tes">Tucson Embedded Systems (TES)</option>
+            <option value="ustech">US Tech Solutions</option>
+          </optgroup>
+        </select>
+      </div>
 
-    <label for="company">Company</label><br/>
-    <select id="company" onchange="showContact()">
-      <option value="">-- Select Company --</option>
-    </select>
-
-    <div id="contact" class="contact"></div>
-
-    <div class="note">
-      Report any work-related injury immediately to your supervisor.
-      In cases of difficulty breathing, chest pain, heavy bleeding,
-      loss of consciousness or life-threatning emergencies, call 911.
+      <div>
+        <label for="search">Search provider (type to filter):</label>
+        <input id="search" type="text" placeholder="Start typing e.g., Manpower, BEPC…" aria-label="Search providers" />
+      </div>
     </div>
+
+    <div id="details" class="details" role="region" aria-live="polite" aria-label="Contact details"></div>
+
+    <div class="emergency">
+      <strong>Emergency:</strong> If there is difficulty breathing, chest pain, heavy bleeding,
+      loss of consciousness, or any life‑threatening situation — <strong>call 911</strong>.
+    </div>
+    <div class="hint">If you have no internet, notify your supervisor and use the printed phone numbers.</div>
   </div>
 
-  <footer>Tip: After the first load with internet, this page is cached and works offline.</footer>
+  <footer>
+    © Honeywell – Incident Reporting | This page caches in your browser and works offline after the first load.
+  </footer>
 
   <script>
-    // Contact list (paste/update from contacts.js content if you prefer a separate file)
-    const CONTACTS = {
-      "Acro": "David McKinney, HR Generalist<br/>E: dmckinney@acrocorp.com<br/>P: (734) 629-5283",
-      "Akkodis": "Akkodis Associate Support: AkkodisAssociateSupport@akkodisgroup.com<br/>1st Escalation: Nilsa.Edwards@akkodisgroup.com<br/>2nd Escalation: Susan.Anderson@akkoidgroup.com<br/>P: 844.875.5746",
-      "Artech Information Systems": "Sunitha Krishnamurthy, Associate Director – ER & Compliance<br/>Office: 973.998.2527<br/>Fax: 973.998.2599<br/>Email: Sunitha.Krishnamurthy@artech.com",
-      "Aversan": "Melissa Fernandez<br/>E: melissa@aversan.com<br/>Office: 416‑201‑0442 ext. 1011<br/>Cell: 647‑456‑1060",
-      "BEPC Inc.": "Nolan Hearn, US Division Account Manager<br/>Mobile: 325‑277‑4014<br/>Office: 325‑944‑0169 ext.106<br/>E: Nolan.Hearn@bepcinc.com",
-      "CCL Contracts Consultancy, Inc.": "Arlene Johnson, HR & Admin Mgr<br/>P: 832‑620‑3452<br/>E: arlene.johnson@cclglobal.com",
-      "Jobs R Us (Cor‑Tech LLC)": "Tempe/Glendale: Genaro Palomino, gpalomino@cor‑tech.net, (510) 921‑0599<br/>Illinois: Tasha Ostrande, tostrander@cor‑tech.net, (608) 931‑5802<br/>El Paso: Cecilia Ortega, cortega@cor‑tech.net, (951) 886‑8118<br/>All other sites: Cammie Williams, jcwilliams@cor‑tech.net, (404) 453‑6837",
-      "Datamatics Global Services Inc": "Beth Smiley, Director of HR (D): 734‑525‑2593<br/>Beth_Smiley@datamaticstech.com; ushr@datamatics.com<br/>MSP_Onboarding@datamaticstech.com<br/>Ashok Kumar P: (734) 407‑1005, Text: (716) 437‑6350<br/>E: ashokkumar.d@datamatics.com",
-      "GDKN": "Sunz Insurance Company<br/>P: 877‑306‑2398",
-      "Idexcel Inc": "Mohammed Khan, Sr. Delivery Manager<br/>Direct: 703‑230‑2640<br/>E: mkhan@idexcel.com<br/>Secondary: Ron Patrick, Office: 972‑241‑6707, Mobile: 972‑839‑4398, E: rpatrick@idexcel.com",
-      "Infotree Service, Inc.": "Carol Kulinski, Benefits/Compliance Manager<br/>E: ckulinski@infotreeglobal.com<br/>P: 734‑927‑3143",
-      "Integrity - EDS": "Shereena Smith, HSE Contact<br/>E: shereena.smith@integrity-eds.com<br/>P: (866) 509‑4377<br/>M: (602) 821‑9077",
-      "Intelliswift": "Amber Howard (Dir. of HR)<br/>E: amber.howard@intelliswift.com, hr@intelliswift.com<br/>P: (510) 695‑2632",
-      "Intertec Engineering, LLC": "Charles Jonkosky, C: 602‑570‑3869, E: Charles.jonkosky@intertecintl.com<br/>Backup: Joshua Hedeby, C: 480‑319‑4930, E: Joshua.Hedeby@intertecintl.com",
-      "Kronos Consulting": "Andrew Gabriel P: 480‑900‑7222 / 602‑677‑1163, E: Andrew.Gabriel@kronosconsulting.net<br/>Marrie De Leon P: 480‑581‑4026, E: Marrie.deleon@Kronosconsulting.net",
-      "Launch Technical Workforce": "Report any work‑related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at 888‑888‑7195 (option 5). E: safety@launchtws.com",
-      "Lancesoft, Inc.": "Veronica Jones<br/>E: Veronica.Jones@lancesoft.com<br/>P: 703‑674‑4543",
-      "Manpower": "Torrance & Phoenix – Jeff Parker, Jeff.parker@manpower.com, 818.235.8899 / 213.519.7692<br/>Redmond – Michael Jin, Michael.jin@manpower.com, 425.531.2794<br/>Lincolnshire – Erran Schmidkonz, Erran.schmidkonz@manpower.com, 847.689.2217<br/>Olathe – Sara Barton, Sara.barton@manpower.com, 913.221.0837<br/>Northford – Theresa Delvecchio, Theresa.delvecchio@manpower.com, 203.859.3597<br/>Ohio – Jennifer Tackett, Jennifer.Tackett@manpower.com, 614.822.9473 / 614.305.1931<br/>El Paso – Jonathan Williams, Jonathan.williams@manpower.com, 915.820.2754 / 915.307.9218",
-      "NESCO Resource": "Paul Chacon<br/>P: 312‑444‑9972<br/>E: pchacon@nescoresource.com",
-      "Pacer Staffing": "ecare@pacerstaffing.com or (215) 966‑8380 / (717)‑385‑6962<br/>Designated Safety Contact: Sargam Dubey, sargam.dubey@pacerstaffing.com, Direct: (215) 966‑8380<br/>Emergency: Moon Rana, Moon.Rana@pacerstaffng.com, Direct: (717)‑385‑6962<br/>Carrier: Service America, Nurse line: (866) 204‑0683",
-      "PDS Tech": "WC Central Team: 1‑833‑470‑6688 or workerscompsupport@adeccogroup.com (8:00 AM–8:00 PM EST M‑F)<br/>After hours: 1‑855‑293‑4222 (Clinical Consultation Nurse Triage)",
-      "Pyramid Consulting, Inc.": "Yensy Parra, P: 214‑715‑5632, E: Yensy.parra@pyramidci.com",
-      "Responsible Staffing (RA Safety Staffing)": "Donald Nixon – 225‑333‑8035, E: donald@rasafetystaffing.com",
-      "Select Source International (SSI)": "Afterhours: 1.866.687.0710<br/>Kekti, E: KektiJ@selectsourceintl.com, P: 612‑474‑9567",
-      "TAD PGS": "Adecco WC Support Team: 1‑833‑470‑6688 (8am–8pm EST)<br/>Clinical Consult: 1‑855‑293‑4222 (after hours)",
-      "Talascend SL LLC": "Kim Stouffer, VP HR, 248‑537‑1288 / Cell 248‑410‑9974, E: kim.stouffer@talascend.com<br/>If emailing, copy Jeannette: jeannette.tousignaut@talascend.com",
-      "Tucson Embedded Systems (TES)": "Nancy Kitts, HR/Tech Recruiter<br/>E: NancyK@TES‑i.com<br/>O: (520) 575‑7283<br/>C: (520) 971‑5593",
-      "US Tech Solutions": "Michelle Vanetti<br/>E: health‑safety@ustechsolutions.com<br/>P: 201.719.9953"
+    // === Contacts master data ===
+    const contacts = {
+      "honeywell-us":
+        "Honeywell Employee – US\nCare On Site: (844) 501‑2273\nReport any work‑related injury immediately to your supervisor.",
+      "honeywell-canada":
+        "Honeywell Employee – Canada\nWindley Ely Nurse Triage: (877) 424‑5256\nReport any work‑related injury immediately to your supervisor.",
+      "acro":
+        "Acro\nDavid McKinney, HR Generalist\nEmail: dmckinney@acrocorp.com\nPhone: (734) 629‑5283",
+      "akkodis":
+        "Akkodis\nAssociate Support: AkkodisAssociateSupport@akkodisgroup.com\n1st Escalation: Nilsa.Edwards@akkodisgroup.com\n2nd Escalation: Susan.Anderson@akkoidgroup.com\nPhone: 844.875.5746",
+      "artech":
+        "Artech Information Systems\nSunitha Krishnamurthy, Associate Director – ER & Compliance\nOffice: 973.998.2527\nEmail: Sunitha.Krishnamurthy@artech.com",
+      "aversan":
+        "Aversan\nMelissa Fernandez\nEmail: melissa@aversan.com\nOffice: 416‑201‑0442 ext. 1011\nCell: 647‑456‑1060",
+      "bepc":
+        "BEPC Inc.\nNolan Hearn, US Division Account Manager\nMobile: 325‑277‑4014\nOffice: 325‑944‑0169 ext.106\nEmail: Nolan.Hearn@bepcinc.com",
+      "ccl":
+        "CCL Contracts Consultancy, Inc.\nArlene Johnson, HR & Admin Mgr\nPhone: 832‑620‑3452\nEmail: arlene.johnson@cclglobal.com",
+      "jobsrus":
+        "Jobs R Us (Cor‑Tech LLC)\nTempe/Glendale: Genaro Palomino, gpalomino@cor‑tech.net, (510) 921‑0599\nIllinois: Tasha Ostrande, tostrander@cor‑tech.net, (608) 931‑5802\nEl Paso: Cecilia Ortega, cortega@cor‑tech.net, (951) 886‑8118\nAll other sites: Cammie Williams, jcwilliams@cor‑tech.net, (404) 453‑6837",
+      "datamatics":
+        "Datamatics Global Services Inc\nBeth Smiley, Director of HR (D): 734‑525‑2593\nEmails: Beth_Smiley@datamaticstech.com; ushr@datamatics.com; MSP_Onboarding@datamaticstech.com\nAshok Kumar (P): (734) 407‑1005 | Text: (716) 437‑6350 | Email: ashokkumar.d@datamatics.com",
+      "gdkn":
+        "GDKN\nSunz Insurance Company\nPhone: 877‑306‑2398",
+      "idexcel":
+        "Idexcel Inc\nPrimary: Mohammed Khan, Sr. Delivery Manager\nDirect: 703‑230‑2640 | Email: mkhan@idexcel.com\nSecondary: Ron Patrick | Office: 972‑241‑6707 | Mobile: 972‑839‑4398 | Email: rpatrick@idexcel.com",
+      "infotree":
+        "Infotree Service, Inc.\nCarol Kulinski, Benefits/Compliance Manager\nEmail: ckulinski@infotreeglobal.com\nPhone: 734‑927‑3143",
+      "integrityeds":
+        "Integrity ‑ EDS\nShereena Smith, HSE Contact\nEmail: shereena.smith@integrity‑eds.com\nPhone: (866) 509‑4377 | Mobile: (602) 821‑9077",
+      "intelliswift":
+        "Intelliswift\nAmber Howard, Dir. of HR\nEmails: amber.howard@intelliswift.com; hr@intelliswift.com\nPhone: (510) 695‑2632",
+      "intertec":
+        "Intertec Engineering, LLC\nCharles Jonkosky | C: 602‑570‑3869 | Email: Charles.jonkosky@intertecintl.com\nBackup: Joshua Hedeby | C: 480‑319‑4930 | Email: Joshua.Hedeby@intertecintl.com",
+      "kronos":
+        "Kronos Consulting\nAndrew Gabriel: 480‑900‑7222, 602‑677‑1163 | Email: Andrew.Gabriel@kronosconsulting.net\nMarrie De Leon: 480‑581‑4026 | Email: Marrie.deleon@Kronosconsulting.net",
+      "launch":
+        "Launch Technical Workforce\nReport any work‑related injury to your supervisor and LAUNCH Workers’ Comp Office IMMEDIATELY at 888‑888‑7195 (option 5).",
+      "lancesoft":
+        "Lancesoft, Inc.\nVeronica Jones\nEmail: Veronica.Jones@lancesoft.com\nPhone: 703‑674‑4543",
+      "manpower":
+        "Manpower\nTorrance/Phoenix: Jeff Parker, Jeff.parker@manpower.com, 818.235.8899 / 213.519.7692\nRedmond: Michael Jin, Michael.jin@manpower.com, 425.531.2794\nLincolnshire: Erran Schmidkonz, Erran.schmidkonz@manpower.com, 847.689.2217\nOlathe: Sara Barton, Sara.barton@manpower.com, 913.221.0837\nNorthford: Theresa Delvecchio, Theresa.Delvecchio@manpower.com, 203.859.3597\nOhio: Jennifer Tackett, Jennifer.Tackett@manpower.com, 614.822.9473 / 614.305.1931\nEl Paso: Jonathan Williams, Jonathan.williams@manpower.com, 915.820.2754 / 915.307.9218",
+      "nesco":
+        "NESCO Resource\nPaul Chacon\nPhone: 312‑444‑9972\nEmail: pchacon@nescoresource.com",
+      "pacer":
+        "Pacer Staffing\nEmail: ecare@pacerstaffing.com | Phone: (215) 966‑8380 / (717)‑385‑6962\nDesignated Safety: Sargam Dubey, sargam.dubey@pacerstaffing.com, (215) 966‑8380\nEmergency: Moon Rana, Moon.Rana@pacerstaffng.com, (717)‑385‑6962\nCarrier: Service America Nurse line: (866) 204‑0683",
+      "pdstech":
+        "PDS Tech\nNotify WC Central Team at 1‑833‑470‑6688 or workerscompsupport@adeccogroup.com (8:00 AM – 8:00 PM).",
+      "pyramid":
+        "Pyramid Consulting, Inc.\nYensy Parra\nPhone: 214‑715‑5632\nEmail: Yensy.parra@pyramidci.com",
+      "rasafety":
+        "Responsible Staffing (RA Safety Staffing)\nDonald Nixon\nPhone: 225‑333‑8035\nEmail: donald@rasafetystaffing.com",
+      "ssi":
+        "Select Source International (SSI)\nAfterhours: 1.866.687.0710\nKekti: KektiJ@selectsourceintl.com | Phone: 612‑474‑9567",
+      "tadpgs":
+        "TAD PGS\nAdecco WC Support Team: 1‑833‑470‑6688 (8am–8pm EST)\nClinical Consult: 1‑855‑293‑4222 (after hours)",
+      "talascend":
+        "Talascend SL LLC\nKim Stouffer, VP of HR, 248‑537‑1288 or 248‑410‑9974, kim.stouffer@talascend.com\nCC: Jeannette Tousignaut, jeannette.tousignaut@talascend.com",
+      "tes":
+        "Tucson Embedded Systems (TES)\nNancy Kitts, HR/Tech. Recruiter\nEmail: NancyK@TES‑i.com\nOffice: (520) 575‑7283 | Cell: (520) 971‑5593",
+      "ustech":
+        "US Tech Solutions\nContact: Michelle Vanetti\nEmail: health‑safety@ustechsolutions.com\nNumber: 201.719.9953"
     };
 
-    function populate(){
-      const sel = document.getElementById('company');
-      Object.keys(CONTACTS).sort().forEach(name => {
-        const opt = document.createElement('option');
-        opt.value = name; opt.textContent = name;
-        sel.appendChild(opt);
-      });
+    // === UI logic ===
+    const selectEl = document.getElementById("company");
+    const detailsEl = document.getElementById("details");
+    const searchEl = document.getElementById("search");
+
+    function renderDetails(key) {
+      detailsEl.textContent = "";
+      if (key && contacts[key]) detailsEl.textContent = contacts[key];
     }
 
-    function showContact(){
-      const name = document.getElementById('company').value;
-      document.getElementById('contact').innerHTML = CONTACTS[name] || '';
+    function onSelect() {
+      renderDetails(selectEl.value);
     }
 
-    // Cache for offline after first load
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').catch(console.error);
+    function onSearch(e) {
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) return;
+      const options = [...selectEl.querySelectorAll("option")];
+      const matches = options.filter(o => o.value && o.textContent.toLowerCase().includes(q));
+      if (matches.length) {
+        selectEl.value = matches[0].value;
+        renderDetails(matches[0].value);
+      }
     }
 
-    window.addEventListener('DOMContentLoaded', populate);
+    selectEl.addEventListener("change", onSelect);
+    searchEl.addEventListener("input", onSearch);
   </script>
 </body>
-</html>
+</
